@@ -35,4 +35,4 @@ $git branch -d the_local_branch
 **Remove a remote branch**
 ```sh
 $git push origin :the_remote_branch
-``` 
+```
