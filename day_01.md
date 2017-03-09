@@ -7,7 +7,9 @@
 #Branch
 **Branch** dùng để phân nhánh, branch đã phân nhánh sẽ không ảnh hưởng đến các branch khác nên có thể tiến hành nhiều thay đổi đồng thời trên cùng một Repository.
 **Tạo Branch**
-@($git checkout -b name_of_branch)
+```sh
+$git checkout -b name_of_branch
+```
 #Pull Request
 Sau khi push mã nguồn của mình lên, **Pull Request** nhằm tạo một yêu cầu ghép các mã nguồn branch mình đang làm việc vào nhánh chính(master).
 **Tạo Pull Request**
@@ -27,6 +29,10 @@ Sau khi xảy ra conflict thì git đã gom hết nội dung của 2 branch lạ
 **Merge** giữ lại toàn bộ các commit, điều này làm cho git commit list dài. *Merge* sẽ hạn chế được *conflict* hơn *rebase*
 #Delete Branch
 **Delete a local branch**
-@($git branch -d the_local_branch)
+```sh
+$git branch -d the_local_branch
+```
 **Remove a remote branch**
-@($git push origin :the_remote_branch) 
+```sh
+$git push origin :the_remote_branch
+``` 
