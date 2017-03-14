@@ -6,31 +6,34 @@
 		<title>day05</title>
 	</head>
 	<body>
+		<!--Header-->
 		<header>
 			<div id="logo">
 				<img src="img/logo.png" alt="LOGO">
 			</div>
 			<div id="slogan">
 				<p>Phòng khám chuyên khoa</p>	
-			</div>
-			<div>
-				<nav>
-					<a href="#">Trang chủ</a>
-					<a href="#">Giới thiệu</a>
-					<a href="#">Dịch vụ y tế</a>
-					<a href="#">Y học thường thức</a>
-					<a href="#">Đặt lịch khám</a>
-					<a href="#">Tư vấn & liên hệ</a>	
-				</nav>	
 			</div>					
 		</header>
-		<div>
-			<img src="img/background.png" alt="Đây là hình background">
-		</div>
+
+		<!--menu & panel-->
+		<section id="menu">
+			<nav>
+				<a href="#">Trang chủ</a>
+				<a href="#">Giới thiệu</a>
+				<a href="#">Dịch vụ y tế</a>
+				<a href="#">Y học thường thức</a>
+				<a href="#">Đặt lịch khám</a>
+				<a href="#">Tư vấn & liên hệ</a>	
+			</nav>
+			<div>
+				<img src="img/background.png" alt="Đây là hình background">
+			</div>	
+		</section>
 
 		<!--Content-->
-		<div id="content" class="container">
-			<section>
+		<div class="container">
+			<section id="content">
 				<article>
 					<div id="col">
 							<img src="img/detail1.png" alt="image detail 2">
@@ -76,16 +79,19 @@
 			</section>
 			<aside id="danh_muc">
 					<h3>Danh mục</h3>
-					<p>Danh mục 1</p>
-					<p>Danh mục 2</p>
-					<p>Danh mục 3</p>
+					<ul>
+						<li>Danh mục 1</li>
+						<li>Danh mục 2</li>
+						<li>Danh mục 3</li>
+					</ul>
 			</aside>
 			<aside id="dat_lich_kham">
 				<h3>Đặt lịch khám</h3>
-				<p>Họ tên:</p>
-				<p>Địa chỉ:</p>
-				<p>Số điện thoại:</p>
-				<p>Thời gian:</p>
+				<p>Họ tên: <input type="text" name="hoten"></p>
+				<p>Địa chỉ: <input type="text" name="diachi"></p>
+				<p>Số điện thoại: <input type="tel" name="sodienthoai"></p>
+				<p>Thời gian: <input type="date" name="thoigian"></p>
+				<p><input type="submit" value="Đặt lịch" name="datlich"></p>
 			</aside>
 		</div>
 
