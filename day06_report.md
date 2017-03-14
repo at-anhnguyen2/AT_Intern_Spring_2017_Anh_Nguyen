@@ -1,7 +1,8 @@
-#CONTROL FLOW
+# CONTROL FLOW
 **Control Flow**: Normaly, with the input data will have different outputs.
 
 `if  else  end` is basic control flow types, there are also `unless   else   end`, it can also be interpreted `if not`.
+
 **Syntax:**
 ```
 	if conditional
@@ -11,6 +12,7 @@
 	end
 ```
 `conditional` is branching condition
+
 **Ex**
 ```
 	if a < b
@@ -24,6 +26,7 @@
 	puts "1 codeline" if true
 ```
 In addition `if` and `unless`, `case when` is also very effective with variable which have different values.
+
 **Syntax:**
 ```
 	case month
@@ -35,11 +38,12 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 		puts "31 days"
 	end
 ```
-#LOOPS
+# LOOPS
 **Loops** in Ruby are used to execute the same block of code a specified number of times.
 
 **Ruby Loops** includes `for` `while` `until` `loop` `time`
-##FOR
+## FOR
+
 **Syntax:**
 ```
 	for i in 0..100
@@ -59,7 +63,8 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 	end
 ```
 
-##WHILE
+## WHILE
+
 **Syntax:**
 ```
 	while conditional
@@ -83,7 +88,8 @@ Be also writen
 		#code
 	end while conditional
 ```
-##UNTIL
+## UNTIL
+
 **Syntax:**
 ```
 	begin
@@ -101,7 +107,8 @@ Like While loop, conditional of Until loop is stop condition, but it inverted to
 	end until i>100
 ```
 
-##TIME
+## TIME
+
 **Syntax:**
 ```
 	a.times do
@@ -109,27 +116,28 @@ Like While loop, conditional of Until loop is stop condition, but it inverted to
 	end
 ```
 `a` is number of time execute loop.
+
 **Ex**
 ```
 	3.times do
 		puts "Hello World!!"
 	end
 ```
-#BINDING.PRY
+# BINDING.PRY
 Method `pry` of object `binding` use to break down execute code. It help programmer can to check neccessery variables and functions.
 
-#VARIABLE
-| Type | Name Syntax | Use 				|
-|------|:-----------:|:----------:|
-|Global|$snake_case  |in this file |
-|Instance|@snake_case|in this class|
-|Local|snake_case|in this local|
-|Constant|UPPERCASE|in this file|
+# VARIABLE
+| Type   | Name Syntax | Use 				 |
+|--------|:-----------:|:-----------:|
+|Global  |$snake_case  |in this file |
+|Instance|@snake_case  |in this class|
+|Local   |snake_case   |in this local|
+|Constant|UPPERCASE    |in this file |
 
-#RANGE and ARRAY
-##The similarity**
+# RANGE and ARRAY
+## The similarity
 Both include some value and each value be numbered order start from 0.
-##The Difference**
+## The Difference
 **Array**
 - Can have diffrence value types in one araay.
 - Can nest multiple arrays together to form a multi-dimensional array.
