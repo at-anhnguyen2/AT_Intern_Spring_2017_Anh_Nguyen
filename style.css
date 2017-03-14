@@ -26,13 +26,13 @@ header{
 
 article{	
 	display: inline-block;
-	width: 32%;
+	width: 32.5%;
 	height: auto;
 	border: 1px solid black;
 }
 #col{
 	background-repeat: no-repeat;
-	background-position: center center;
+	background-position: center;
 	background-size: cover
 }
 
@@ -67,4 +67,9 @@ footer{
 	height: auto;
 	background-color: gray;
 	display: table-cell;
+}
+
+#img_detail{
+	width: 210px;
+	height: auto;
 }
