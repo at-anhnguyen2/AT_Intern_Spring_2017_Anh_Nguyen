@@ -58,11 +58,14 @@ class Exercise5
 		when 1, 2
 			puts "1"
 		else
-			fi=2
-			for i in 2..n-1
-				fi+=i
+			fibo=1
+			nacci=1
+			for i in 3..n
+				fbnc=fibo+nacci
+				fibo=nacci
+				nacci=fbnc
 			end
-			puts "#{fi}"
+			puts "#{fbnc}"
 		end
 	end
 end
