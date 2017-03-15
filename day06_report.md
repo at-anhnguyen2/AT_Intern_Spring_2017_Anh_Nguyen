@@ -4,7 +4,7 @@
 `if  else  end` is basic control flow types, there are also `unless   else   end`, it can also be interpreted `if not`.
 
 **Syntax:**
-```
+```ruby
 	if conditional
 		#do some thing
 	else
@@ -14,7 +14,7 @@
 `conditional` is branching condition
 
 **Ex**
-```
+```ruby
 	if a < b
 		puts "#{a}"
 	else
@@ -22,13 +22,13 @@
 	end
 ```
 `if end` can be writen 1 codeline
-```
+```ruby
 	puts "1 codeline" if true
 ```
 In addition `if` and `unless`, `case when` is also very effective with variable which have different values.
 
 **Syntax:**
-```
+```ruby
 	case month
 	when 2
 		puts "28 days"
@@ -45,7 +45,7 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 ## FOR
 
 **Syntax:**
-```
+```ruby
 	for i in 0..100
 		#code
 	end
@@ -55,7 +55,7 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 `0..100` if range of variable
 
 **Ex**
-```
+```ruby
 	for i in 0..100
 		if i.odd
 			puts "#{i}"
@@ -66,7 +66,7 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 ## WHILE
 
 **Syntax:**
-```
+```ruby
 	while conditional
 		#code
 	end
@@ -74,7 +74,7 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 `conditinal` is stop condition of while loop.
 
 **Ex**
-```
+```ruby
 	i=0
 	while i<100 
 		puts "#{i}"
@@ -83,7 +83,7 @@ In addition `if` and `unless`, `case when` is also very effective with variable 
 ```
 
 Be also writen
-```
+```ruby
 	begin
 		#code
 	end while conditional
@@ -91,7 +91,7 @@ Be also writen
 ## UNTIL
 
 **Syntax:**
-```
+```ruby
 	begin
 	   #code
 	end until conditional
@@ -99,7 +99,7 @@ Be also writen
 Like While loop, conditional of Until loop is stop condition, but it inverted to comparable values
 
 **Ex**
-```
+```ruby
 	i=0
 	begin
 		puts "#{i}"
@@ -110,7 +110,7 @@ Like While loop, conditional of Until loop is stop condition, but it inverted to
 ## TIME
 
 **Syntax:**
-```
+```ruby
 	a.times do
 		#code
 	end
@@ -118,7 +118,7 @@ Like While loop, conditional of Until loop is stop condition, but it inverted to
 `a` is number of time execute loop.
 
 **Ex**
-```
+```ruby
 	3.times do
 		puts "Hello World!!"
 	end
@@ -146,6 +146,6 @@ Both include some value and each value be numbered order start from 0.
 - Can not nest multiple arrays together.
 - Can convert to array by the way `to_a`
 - **Ex**
-```
+```ruby
 range = (1..10).to_a
 ```
