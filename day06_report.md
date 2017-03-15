@@ -141,11 +141,13 @@ Both include some value and each value be numbered order start from 0.
 **Array**
 - Can have diffrence value types in one araay.
 - Can nest multiple arrays together to form a multi-dimensional array.
+
 **Range**
 - All value in range belong one type.
 - Can not nest multiple arrays together.
 - Can convert to array by the way `to_a`
-- **Ex**
+
+**Ex**
 ```ruby
 range = (1..10).to_a
 ```
