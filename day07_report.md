@@ -7,12 +7,12 @@ Properties of **form**:
 - Where data go to
 
 Standard elements of **Form**:
--`Text field`: where to enter data.
--`Select box`: displays the standard data to select.
--`Check box`: displays options that can only be selected yes or no.
--`Radio button`: only selected one and only one option of all options showed.
--`Lable`: displays describes of form.
--`Button`: where to execute some function.
+- `Text field`: where to enter data.
+- `Select box`: displays the standard data to select.
+- `Check box`: displays options that can only be selected yes or no.
+- `Radio button`: only selected one and only one option of all options showed.
+- `Lable`: displays describes of form.
+- `Button`: where to execute some function.
 
 # CSS
 **CSS** use to transform HTML to general form for homogeneous UI on all OS and all browser.
@@ -53,9 +53,9 @@ it use to resetup width and height of element after margin and padding.
 ## z-index
 **z-inder** use to setup the stack order on one position.
 
-which have greater z-index number will on top.
+which have greater z-index value will on top.
 
-which have lower z-index number will on bottom
+which have lower z-index value will on bottom
 
 Default z-index is 0.
 
@@ -63,5 +63,5 @@ z-inder is only active with position property as the same time.
 
 **Syntax:**
 ```css
-	z-index: giá trị;
+	z-index: value;
 ```
