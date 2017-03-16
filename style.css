@@ -54,7 +54,7 @@ main{
 	width: 960px;
 	margin: 0 auto;
 	padding: 50px 0 20px 0;
-	font-family: Arial, sans-serif;
+	font-family: Arial, sans-serif;	
 	overflow: auto;
 }
 .main_detail{
@@ -114,18 +114,19 @@ aside{
 	padding: 10px 0 0 0;
 }
 footer{
-	width: 960px;
 	margin: 0 auto;
 	clear: both;
-	background-color: green;
+	background-color: #62c6f8;
 	font-family: Arial, sans-serif;
 	font-size: 14px;
 }
-
+.bg_footer{
+	width: 960px;
+	margin: 0 auto;
+}
 .detail_footer{
 	width: 320px;
 	height: auto;
-	background-color: #62c6f8;
 	color: #ffffff;
 	display: table-cell;
 }
