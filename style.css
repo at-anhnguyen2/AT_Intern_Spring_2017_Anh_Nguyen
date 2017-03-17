@@ -23,9 +23,9 @@ main, .tel_contact{
 
 .menu_panel{
   width: 100%;
-  margin: 0 auto;
 	clear: both;
-	border-top: 1px solid gray; 
+	border-top: 1px solid gray;
+
 }
 .menu_panel .background{
   width: 100%;
@@ -144,6 +144,7 @@ aside{
   background-color: #d9e4e9;
   padding: 8px 20px;
   box-sizing: border-box;
+  text-align: center;
 }
 .dat_lich_kham input{
   width: 100%;
@@ -155,7 +156,7 @@ aside{
   color: black !important;
 }
 button{
-  display: block;
+  /*display: block;*/
   margin: 5px auto;
   padding: 10px;
   font-weight: bold;
