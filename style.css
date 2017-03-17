@@ -25,6 +25,13 @@ main, .tel_contact{
 	clear: both;
 	border-top: 1px solid gray;
 }
+.menu_panel .background{
+  width: 100%;
+  background-image: url(../img/background.png);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
 nav{
 	width: 960px;
 	margin: 0 150px;
@@ -44,8 +51,9 @@ nav a:hover{
 	color: #4cc1fc;
 }
 
+
 main{
-	width: calc(100% - 300px);
+	width: calc(100% - 280px);
 	height: auto;
 }
 
@@ -57,8 +65,9 @@ main{
 	overflow: auto;
 }
 main div{
+  position: relative;
 	display: inline-block;
-	width: 194px;
+	width: 29%;
 	height: auto;
 	margin: 14px 0 0 20px;
 	border: 1px solid #f0f0f0;
@@ -75,9 +84,13 @@ main .img_detail{
 	height: auto;
 }
 main a img{
-	float: right;
-	padding: 0;
+  position: absolute;
+	width: 15px;
+  height: 15px;
+  padding: 0;
 	margin: 0;
+  right: 0;
+  bottom: 0;
 }
 header{
 	width: 960px;
@@ -86,7 +99,7 @@ header{
 }
 
 aside{	
-	width: 300px;
+	width: 280px;
 	float: left;
 	overflow: auto;
 }
@@ -123,6 +136,32 @@ aside{
   color: red;
 }
 
+.dat_lich_kham{
+  width: 100%;
+  background-color: #d9e4e9;
+  padding: 8px 20px;
+  box-sizing: border-box;
+}
+.dat_lich_kham input{
+  width: 100%;
+  padding: 10px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+.dat_lich_kham input::-webkit-input-placeholder{
+  color: black !important;
+}
+button{
+  display: block;
+  margin: 5px auto;
+  padding: 10px;
+  font-weight: bold;
+  border: none;
+  border-radius: 2px;
+  background-color: #33a031;
+  color: #fff;
+}
+
 footer{
 	margin: 0 auto;
 	clear: both;
@@ -134,14 +173,14 @@ footer{
 	width: 960px;
 	margin: 0 auto;
 }
-.detail_footer{
+.bg_footer div{
 	width: 320px;
 	height: auto;
 	padding: 20px;
 	color: #ffffff;
 	display: table-cell;
 }
-.detail_footer p{
+.bg_footer p{
 	display: list-item;
 	margin: 5px;
 }
