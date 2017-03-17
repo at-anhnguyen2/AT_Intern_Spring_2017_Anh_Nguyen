@@ -3,26 +3,26 @@ body{
 	font-size: 14px;
 }
 
-.left_side{
+.logo{
 	float: left;
 }
-.right_side{
-	float: right;
-}
-
-.logo{
+.logo img, .logo div{
 	display: inline-block;
 	vertical-align: middle;
 }
-.contact{
+
+main, .tel_contact{
+	float: right;
+}
+.tel_contact img, .tel_contact span{
 	vertical-align: middle;
 }
-.tel_contact{
+.tel_contact .tel{
 	color: #4cc1fc;
-	vertical-align: middle;
 }
 
-#menu_panel{
+.menu_panel{
+	clear: both;
 	border-top: 1px solid gray;
 }
 nav{
@@ -38,15 +38,14 @@ nav a{
 	padding: 16px 14px;
 	text-decoration: none;
 	font-size: 12px;
-
 	border-right: 1px solid gray;
 }
 nav a:hover{
 	color: #4cc1fc;
 }
+
 main{
-	float: right;
-	width: 660px;
+	width: calc(100% - 300px);
 	height: auto;
 }
 
@@ -57,25 +56,25 @@ main{
 	font-family: Arial, sans-serif;	
 	overflow: auto;
 }
-.main_detail{
+main div{
 	display: inline-block;
 	width: 194px;
 	height: auto;
 	margin: 14px 0 0 20px;
 	border: 1px solid #f0f0f0;
 }
-.main_detail h4{
+main h4{
 	margin: 10px 0 10px 15px;
 }
-.main_detail p{
+main p{
 	font-size: 11px;
 	margin: 10px 0 25px 15px;
 }
-.main_detail #img_detail{
+main .img_detail{
 	width: 100%;
 	height: auto;
 }
-.main_detail .img_link{
+main a img{
 	float: right;
 	padding: 0;
 	margin: 0;
@@ -91,28 +90,39 @@ aside{
 	float: left;
 	overflow: auto;
 }
-.danh_muc{
-	font-family: Arial, sans-serif;
-	font-size: 14px;
-}
-.list{
+
+#left_menu{
+  font-family: Arial, sans-serif;
+  font-size: 14px;
 	list-style-type: none;
 	overflow: hidden;
 	padding: 0;
 	background-color: #d9e4e9;
 	font-size: 14px;
 }
-.list li{
+#left_menu li{
+  /*position: relative;*/
 	padding: 10px 14px;
 }
-.lower_list{
+.sub_menu{
+  /*display: none;
+  position: absolute;*/
 	list-style-type: circle;
 	overflow: hidden;
 	background-color: #fefefe;	
 }
-.lower_list li{
-	padding: 10px 0 0 0;
+.sub_menu li{
+	padding: 7px 0;
 }
+#left_menu li:hover{
+  /*display: block;*/
+  background-color: #5997f9;
+}
+#left_menu li:hover > .sub_menu{
+  /*display: block;*/
+  color: red;
+}
+
 footer{
 	margin: 0 auto;
 	clear: both;
@@ -127,6 +137,20 @@ footer{
 .detail_footer{
 	width: 320px;
 	height: auto;
+	padding: 20px;
 	color: #ffffff;
 	display: table-cell;
+}
+.detail_footer p{
+	display: list-item;
+	margin: 5px;
+}
+.licence{
+	border-top: 1px solid #f1f1f1;
+}
+.licence p{
+	width: 960px;
+	margin: 0 auto;
+	padding: 15px 0;
+	color: #ffffff;
 }
