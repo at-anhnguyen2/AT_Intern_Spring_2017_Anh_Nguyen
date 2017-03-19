@@ -25,7 +25,7 @@ In `form`, an action parameter is required.
 	</form>
 ```
 
-#CSS
+# CSS
 
 ## The difference between inline and inline-block
 ### The similarity
@@ -36,15 +36,15 @@ In `form`, an action parameter is required.
 - `inline-block` elements will be displayed in a block and have CSS properties `width` `height` so that we can customize the value. The default value for the two attributes is 100%. This means that they will have width and height dimensions equal to the size of the parent element that contains them.
 ```css
 	.inline {
-    display: inline;
-    width: 100px;/*do not work*/
-    height: 100px;/*do not work*/
-    font-size: 50px;
+	    display: inline;
+	    width: 100px;/*do not work*/
+	    height: 100px;/*do not work*/
+	    font-size: 50px;
 	}
 	.block {
-    display: block;
-    width: 100px;
-    height: 100px;
+	    display: block;
+	    width: 100px;
+	    height: 100px;
 	}
 ```
 ## The difference between a `relative`, `fixed`, `absolute` and `static` positioned element
@@ -60,7 +60,7 @@ This is a defaul position of all HTML element. The element will be place in its 
 	<a href="#">Link 1</a>
 	<a href="#">Link 2</a>
 	<a href="#">Link 3</a>
-``
+```
 The first `a` tag will appear first, followed by the second `a` tag and the third `a` tag.
 
 And this position type is not affected by the `top`, `right`, `bottom` and `right` attributes.
