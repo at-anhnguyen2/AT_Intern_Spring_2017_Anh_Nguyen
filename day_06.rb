@@ -3,7 +3,7 @@ require "pry"
 require "mysql2"
 class Exercise1To4
 	@answer="y"
-	@client = Mysql2::Client.new(:host => "localhost", :username => "root", :password "3041992")
+	@client = Mysql2::Client.new(:host => "localhost", :database => "football", :username => "root", :password "3041992")
 	@name=""
 	def input_data
 		puts "input football team name:"
