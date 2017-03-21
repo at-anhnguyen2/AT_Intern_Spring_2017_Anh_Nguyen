@@ -74,7 +74,7 @@ class Exercise4
   #cho em nợ những câu với mysql, lap em ko chạy đc ubuntu ạ
 end
 ex1 = Exercise1.new
-ex1.string_lenght("abAs1a")
+ex1.validate("ab1Asa")
 
 ex2 = Exercise2.new
 ex2.time_validate("24:72:02")
