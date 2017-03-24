@@ -1,10 +1,15 @@
 @import "variable";
 @import "global";
+@import "mixin";
+@font-face{
+  font-family: 'Bryant Bold';
+  src: url(../font/bryant-bold-webfont.ttf);
+}
 body{
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: arial;
+  font-family: Arial, 'Bryant Bold';
   font-size: 14px;
 }
 .phone-number{
@@ -58,14 +63,28 @@ body{
   }
 }
 .banner{
-  clear: both;
+  //clear: both;
+  @extend %text-upper-case;
   width: 100%;
-  height: 239px;
+  height: 180px;
   background: url(../img/banner.png) no-repeat center;
-  color: #fff;
-  font-size: 24px;
-  padding: 10px 80px;
+  font-size: 30px;
   box-sizing: border-box;
+  position: relative;
+  div{
+    position: absolute;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -620px;
+    .line2{
+      &::before{
+        content: "TRAI NGHIEM ";
+        color: transparent;
+      }
+    }
+  }
 }
 .content{
   @extend %center-layout;
@@ -76,31 +95,38 @@ body{
     font-size: 20px;
     margin: 40px 8px;
   }
-  .catology{
+  .categories{
     margin-bottom: 50px;
-    @for $i from 1 through 3 {
-      .cato#{$i} {
-        font-size: 30px;
-        text-decoration: none;
-        width: 400px;
-        height: 120px;
-        margin: 0 8px; 
-        border-radius: 3px;
-        border: 1px solid #000;
-        box-sizing: border-box;
-        display: inline-block;
-        background: url(../img/cato#{$i}.png) no-repeat center; 
-        box-shadow: 0 1px 2px 0 rgba(0,0,0,0.18);
-        &:hover{
-          transform: scale(1.025, 1.025);
-        }
-        div{
-          background: rgba(0, 0, 0, 0.5);
-          width: 100%;
-          height: 100%;
-          text-align: center;
-          line-height: calc(400px/4 + 30px/2);
-          color: $white-color;
+    .item-category{
+      @extend %text-upper-case;
+      position: relative;
+      font-size: 30px;
+      text-decoration: none;
+      width: 400px;
+      height: 120px;
+      margin: 0 8px; 
+      border-radius: 3px;
+      box-sizing: border-box;
+      display: inline-block;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0, 0.18);
+      text-align: center;
+      line-height: 120px;
+      &:after{
+        content: '';
+        display:block;
+        position:absolute;
+        top:0;
+        left:0;
+        width:100%;
+        height:100%;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      &:hover{
+        transform: scale(1.025, 1.025);
+      }
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}){
+          background: url(../img/cato#{$i}.png) no-repeat center; 
         }
       }
     }
@@ -110,7 +136,6 @@ body{
     height: auto;
     margin: 10px 8px;
     border-radius: 3px;
-    border: 1px solid gray;
     box-sizing: border-box;
     display: inline-block;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);

@@ -3,11 +3,18 @@
   height: auto;
   margin: 0 auto; }
 
+.banner, .content .categories .item-category {
+  color: #fff;
+  text-transform: uppercase; }
+
+@font-face {
+  font-family: 'Bryant Bold';
+  src: url(../font/bryant-bold-webfont.ttf); }
 body {
   margin: 0;
   padding: 0;
   border: 0;
-  font-family: arial;
+  font-family: Arial, 'Bryant Bold';
   font-size: 14px; }
 
 .phone-number {
@@ -52,14 +59,22 @@ body {
         border-bottom: 5px solid #ffa800; }
 
 .banner {
-  clear: both;
   width: 100%;
-  height: 239px;
+  height: 180px;
   background: url(../img/banner.png) no-repeat center;
-  color: #fff;
-  font-size: 24px;
-  padding: 10px 80px;
-  box-sizing: border-box; }
+  font-size: 30px;
+  box-sizing: border-box;
+  position: relative; }
+  .banner div {
+    position: absolute;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -620px; }
+    .banner div .line2::before {
+      content: "TRAI NGHIEM ";
+      color: transparent; }
 
 .content {
   width: 1260px;
@@ -68,77 +83,43 @@ body {
   .content h1 {
     font-size: 20px;
     margin: 40px 8px; }
-  .content .catology {
+  .content .categories {
     margin-bottom: 50px; }
-    .content .catology .cato1 {
+    .content .categories .item-category {
+      position: relative;
       font-size: 30px;
       text-decoration: none;
       width: 400px;
       height: 120px;
       margin: 0 8px;
       border-radius: 3px;
-      border: 1px solid #000;
       box-sizing: border-box;
       display: inline-block;
-      background: url(../img/cato1.png) no-repeat center;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18); }
-      .content .catology .cato1:hover {
-        transform: scale(1.025, 1.025); }
-      .content .catology .cato1 div {
-        background: rgba(0, 0, 0, 0.5);
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+      text-align: center;
+      line-height: 120px; }
+      .content .categories .item-category:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
         width: 100%;
         height: 100%;
-        text-align: center;
-        line-height: calc(400px/4 + 30px/2);
-        color: #fff; }
-    .content .catology .cato2 {
-      font-size: 30px;
-      text-decoration: none;
-      width: 400px;
-      height: 120px;
-      margin: 0 8px;
-      border-radius: 3px;
-      border: 1px solid #000;
-      box-sizing: border-box;
-      display: inline-block;
-      background: url(../img/cato2.png) no-repeat center;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18); }
-      .content .catology .cato2:hover {
+        background: rgba(0, 0, 0, 0.4); }
+      .content .categories .item-category:hover {
         transform: scale(1.025, 1.025); }
-      .content .catology .cato2 div {
-        background: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        line-height: calc(400px/4 + 30px/2);
-        color: #fff; }
-    .content .catology .cato3 {
-      font-size: 30px;
-      text-decoration: none;
-      width: 400px;
-      height: 120px;
-      margin: 0 8px;
-      border-radius: 3px;
-      border: 1px solid #000;
-      box-sizing: border-box;
-      display: inline-block;
-      background: url(../img/cato3.png) no-repeat center;
-      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18); }
-      .content .catology .cato3:hover {
-        transform: scale(1.025, 1.025); }
-      .content .catology .cato3 div {
-        background: rgba(0, 0, 0, 0.5);
-        width: 100%;
-        height: 100%;
-        text-align: center;
-        line-height: calc(400px/4 + 30px/2);
-        color: #fff; }
+      .content .categories .item-category:nth-child(1) {
+        background: url(../img/cato1.png) no-repeat center; }
+      .content .categories .item-category:nth-child(2) {
+        background: url(../img/cato2.png) no-repeat center; }
+      .content .categories .item-category:nth-child(3) {
+        background: url(../img/cato3.png) no-repeat center; }
   .content .container {
     width: 295px;
     height: auto;
     margin: 10px 8px;
     border-radius: 3px;
-    border: 1px solid gray;
     box-sizing: border-box;
     display: inline-block;
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15); }
