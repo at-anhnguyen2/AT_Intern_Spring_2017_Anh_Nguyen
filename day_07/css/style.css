@@ -1,0 +1,174 @@
+.header, .content, .footer {
+  width: 1240px;
+  height: auto;
+  margin: 0 auto; }
+
+.banner, .content .categories .item-category {
+  color: #fff;
+  text-transform: uppercase; }
+
+@font-face {
+  font-family: 'Bryant Bold';
+  src: url(../font/bryant-bold-webfont.ttf); }
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, 'Bryant Bold';
+  font-size: 14px; }
+
+.phone-number {
+  color: #ffa800;
+  font-weight: bold; }
+
+.price {
+  color: #0ec0ee;
+  font-weight: bold; }
+
+.header {
+  height: 110px;
+  overflow: hidden; }
+  .header .header-logo {
+    float: left;
+    position: relative;
+    height: 110px; }
+    .header .header-logo img {
+      height: 86px;
+      position: absolute;
+      top: 50%;
+      margin-top: -43px; }
+  .header .right-header {
+    float: right; }
+    .header .right-header img, .header .right-header div {
+      display: inline-block;
+      vertical-align: middle; }
+    .header .right-header p {
+      padding: 0;
+      margin: 5px; }
+  .header .top-menu {
+    float: right;
+    margin-top: 5px; }
+    .header .top-menu a {
+      font-weight: bold;
+      color: #000;
+      display: inline-block;
+      padding: 20px 15px;
+      text-decoration: none;
+      border-bottom: 5px solid transparent; }
+      .header .top-menu a:hover {
+        border-bottom: 5px solid #ffa800; }
+
+.banner {
+  width: 100%;
+  height: 180px;
+  background: url(../img/banner.png) no-repeat center;
+  font-size: 30px;
+  box-sizing: border-box;
+  position: relative; }
+  .banner div {
+    position: absolute;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -620px; }
+    .banner div .line2::before {
+      content: "TRAI NGHIEM ";
+      color: transparent; }
+
+.content {
+  width: 1260px;
+  padding: 2px;
+  box-sizing: border-box; }
+  .content h1 {
+    font-size: 20px;
+    margin: 40px 8px; }
+  .content .categories {
+    margin-bottom: 50px; }
+    .content .categories .item-category {
+      position: relative;
+      font-size: 30px;
+      text-decoration: none;
+      width: 400px;
+      height: 120px;
+      margin: 0 8px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      display: inline-block;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+      text-align: center;
+      line-height: 120px; }
+      .content .categories .item-category:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); }
+      .content .categories .item-category:hover {
+        transform: scale(1.025, 1.025); }
+      .content .categories .item-category:nth-child(1) {
+        background: url(../img/cato1.png) no-repeat center; }
+      .content .categories .item-category:nth-child(2) {
+        background: url(../img/cato2.png) no-repeat center; }
+      .content .categories .item-category:nth-child(3) {
+        background: url(../img/cato3.png) no-repeat center; }
+  .content .container {
+    width: 295px;
+    height: auto;
+    margin: 10px 8px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15); }
+    .content .container img {
+      width: 100%;
+      height: auto; }
+    .content .container div {
+      margin: 0;
+      padding: 0 20px; }
+
+.footer {
+  padding: 6px 0;
+  margin-top: 22px;
+  border-top: 1px solid gray;
+  box-sizing: border-box; }
+  .footer .contact {
+    margin-top: 20px; }
+    .footer .contact div {
+      margin: 0; }
+    .footer .contact .footer-logo {
+      width: 295px;
+      float: left; }
+    .footer .contact .info {
+      width: 285px;
+      float: left; }
+      .footer .contact .info p {
+        margin: 8px 0; }
+    .footer .contact .community {
+      width: 200px;
+      float: left; }
+    .footer .contact .input-email {
+      width: 440px;
+      float: right; }
+      .footer .contact .input-email div {
+        width: 440px;
+        height: 50px; }
+        .footer .contact .input-email div input {
+          height: 50px;
+          width: 350px;
+          padding: 25px;
+          box-sizing: border-box; }
+        .footer .contact .input-email div button {
+          width: 90px;
+          height: 53px;
+          margin-left: -94px;
+          border: 0;
+          background-color: #0ec0ee; }
+  .footer .license {
+    padding: 10px 0;
+    clear: both; }
+
+/*# sourceMappingURL=style.css.map */
