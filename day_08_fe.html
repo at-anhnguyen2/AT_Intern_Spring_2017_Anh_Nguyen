@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <title>Test-JavaScript</title>
+</head>
+<body>
+  <div id="a">
+    <div class="input-member">
+      <input type="text" name="js-name" placeholder="Input name of Interm member" value="">
+      <button type="button" name="button" onclick="submit()">
+        Submit
+      </button> 
+    </div>
+    <div class="show-members">
+      <h1>Member List</h1>
+      <ul id="js-members">
+        
+      </ul>
+    </div>
+  </div>
+  <script type="text/javascript">
+    var members = [];
+    var content = document.getElementById('js-members');
+    var obj = document.getElementsByName('js-name');
+    function submit() {
+      members.push(obj[0].value);
+      showMembers();
+    }
+    function showMembers() {
+      content.innerHTML = '';
+      for (var i = 0, len = members.length; i < len; i++) {
+        var li = document.createElement('li');
+        li.innerHTML = members[i];
+        content.appendChild(li);
+      }
+    }
+  </script>
+</body>
+
+</html>
