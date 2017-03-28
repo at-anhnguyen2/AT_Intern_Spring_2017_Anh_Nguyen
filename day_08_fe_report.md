@@ -62,19 +62,9 @@ When a web page is loaded, the brower chreates a DOM of the page. The DOM is con
   </html>
 ```
 **DOM tree**
-```mermaid
-graph TD
-  A[Document] --- B[Root element: <html>]
-  B --- C[Element: <header>]
-  B --- D[Element: <body>]
-  C --- E[Element: <title>]
-  E --- F[Text: "My HTML"]
-  D --- G[Element: <a>]
-  D --- H[Element: <h1>]
-  G --- I[Attribute: "href"]
-  G --- J[Text: "Link"]
-  H --- K[Text: "Text Header"]
-```
+![Example image](domtree.jpg)
+
+
 ## The difference between `==` and `===`
 `==` and `===` have a basic similarity between them is that they are both comparable and return true or false.
 
