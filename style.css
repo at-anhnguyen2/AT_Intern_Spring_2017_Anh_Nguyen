@@ -1,0 +1,32 @@
+body{
+  width: 1024px;
+  height: auto;
+  padding: 0;
+  margin: 0 auto;
+  text-align: center;
+}
+.basic-JS{
+  width: 500px;
+  float: left;
+}
+.jQuery{
+  width: 500px;
+  float: right;
+}
+.input-member-1, .input-member-2{
+  margin: 60px 0;
+}
+.input-member-1 input, .input-member-2 input, button{
+  padding: 5px 15px;
+  border-radius: 3px;
+}
+.show-members-1 ul li, .show-members-2 ul li{
+  width: 250px;
+  margin: 15px auto;
+}
+.name{
+  float: left;
+}
+.btn{
+  float: right;
+}
