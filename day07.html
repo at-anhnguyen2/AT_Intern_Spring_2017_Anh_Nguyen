@@ -292,11 +292,55 @@
     if(typeof(Storage) !== "undefined"){
       checkLocalStorage();
       loadLocalStorage();
-      updateLocalStorage();
     }
     else{
       alert("Brower does not support web storage...");
     }
+
+    // create event click for button Book
+    for (var i = 0, len = $btn.length; i < len; i++) {
+      $btn[i].addEventListener('click', function(e) {
+        j = String(e.target.id).substring(3);
+        j = Number(j) - 1;
+        if($arrayIsBooked[j] == false){
+          localStorage.countTour = Number(localStorage.countTour) + 1;
+          $arrayIsBooked[j] = true;
+          $tourHash = {name: $tourName[j].innerHTML, price: $tourPrice[j].innerHTML};
+          $arrayTourBooked.push($tourHash);
+        }
+        $numberOfTour.innerHTML = localStorage.countTour;
+        localStorage.isTourBooked = JSON.stringify($arrayIsBooked);
+        localStorage.listTour = JSON.stringify($arrayTourBooked);
+      });
+    }
+
+    // click number of tour
+    $numberOfTour.addEventListener('click', function() {
+      $tableTourBooked[0].style = "visibility: visible; z-index: 20";
+      $overlayBody.style = "background: rgba(0, 0, 0, 0.4); z-index: 10";
+      loadTable();
+    });
+
+    //click button pay
+    $pay.addEventListener('click', function() {
+      alert("Paying Success!!!!");
+      $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
+      $overlayBody.style = "background: transparent; z-index: -10";
+      localStorage.clear();
+      $arrayIsBooked = [];
+      $arrayTourBooked = [];
+      removeTable();
+      checkLocalStorage();
+      loadLocalStorage();
+    });
+
+    //click button back
+    $back.addEventListener('click', function(){
+      $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
+      $overlayBody.style = "background: transparent; z-index: -10";
+      removeTable();
+      loadLocalStorage();
+    });
 
     function checkLocalStorage(){
       if(!localStorage.countTour){
@@ -318,47 +362,6 @@
       $arrayIsBooked = JSON.parse(localStorage.isTourBooked);
       $arrayTourBooked = JSON.parse(localStorage.listTour);
     }
-
-    function updateLocalStorage(){
-      for (var i = 0, len = $btn.length; i < len; i++) {
-        $btn[i].addEventListener('click', function(e) {
-          j = String(e.target.id).substring(3);
-          j = Number(j) - 1;
-          if($arrayIsBooked[j] == false){
-            localStorage.countTour = Number(localStorage.countTour) + 1;
-            $arrayIsBooked[j] = true;
-            $tourHash = {name: $tourName[j].innerHTML, price: $tourPrice[j].innerHTML};
-            $arrayTourBooked.push($tourHash);
-          }
-          $numberOfTour.innerHTML = localStorage.countTour;
-          localStorage.isTourBooked = JSON.stringify($arrayIsBooked);
-          localStorage.listTour = JSON.stringify($arrayTourBooked);
-        });
-      }
-    }
-
-    // click number of tour
-    $numberOfTour.addEventListener('click', function() {
-      $tableTourBooked[0].style = "visibility: visible; z-index: 20";
-      $overlayBody.style = "background: rgba(0, 0, 0, 0.4); z-index: 10";
-      loadTable();
-    });
-
-    //click button pay
-    $pay.addEventListener('click', function() {
-      alert("Paying Success!!!!");
-      $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
-      $overlayBody.style = "background: transparent; z-index: -10";
-      localStorage.clear();
-      loadLocalStorage();
-    });
-
-    //click button back
-    $back.addEventListener('click', function(){
-      $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
-      $overlayBody.style = "background: transparent; z-index: -10";
-      loadLocalStorage();
-    });
 
     function loadTable(){
       var $showTour = document.getElementById('show-tour');
@@ -401,6 +404,13 @@
           //update Total
           updateTotal();
         });
+      }
+    }
+
+    function removeTable(){
+      var $showTour = document.getElementById('show-tour');
+      while ($showTour.hasChildNodes()) {
+        $showTour.removeChild($showTour.firstChild);
       }
     }
     
