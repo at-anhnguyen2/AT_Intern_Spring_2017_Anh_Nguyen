@@ -366,7 +366,6 @@
     function loadTable(){
       var $showTour = document.getElementById('show-tour');
       var $arrayTour = JSON.parse(localStorage.listTour);
-      console.log($arrayTour);
       for (var i = 0, len = $arrayTour.length; i < len; i++) {
         //create Elements in table
         var $tr = document.createElement('tr');
@@ -384,9 +383,10 @@
         //add value
         $tdName.innerHTML = $arrayTour[i].name;
         $strPrice = String($arrayTour[i].price);
-        $tdPrice.innerHTML = $strPrice.substring(0, $strPrice.length - 4).split(".").join("");
+        $tdPrice.innerHTML = $strPrice.substring(0, $strPrice.length - 4).split(".").join(",");
         $tdQuantity.appendChild($inputQuantity);
-        $tdTotal.innerHTML = Number($tdPrice.innerHTML) * Number($inputQuantity.value);
+        $tdTotal.innerHTML = normalNumber($tdPrice.innerHTML) * Number($inputQuantity.value);
+        $tdTotal.innerHTML = commasNumber($tdTotal.innerHTML);
 
         //table appendChild
         $tr.appendChild($tdName);
@@ -394,17 +394,18 @@
         $tr.appendChild($tdQuantity);
         $tr.appendChild($tdTotal);
         $showTour.appendChild($tr);
-        updateTotal();
 
         //Change Quantity
         $inputQuantity.addEventListener('change', function(e) {
           //update subTotal
           $currentRowPrice = e.path[2].childNodes[1].innerHTML;
-          e.path[2].childNodes[3].innerHTML = Number($currentRowPrice) * Number(e.target.value);
+          $currentRowTotal = normalNumber($currentRowPrice) * Number(e.target.value);
+          e.path[2].childNodes[3].innerHTML = commasNumber($currentRowTotal);
           //update Total
           updateTotal();
         });
       }
+      updateTotal();
     }
 
     function removeTable(){
@@ -419,11 +420,19 @@
       var $arrayCountTour = document.getElementsByClassName('tbody-quantity');
       var $sumPrice = 0, $sumTour = 0;
       for (var i = 0, len = $arrayTotal.length; i < len; i++) {
-        $sumPrice += Number($arrayTotal[i].innerHTML);
+        $sumPrice += normalNumber($arrayTotal[i].innerHTML);
         $sumTour += Number($arrayCountTour[i].value);
       }
-      $tfootTotal.innerHTML = $sumPrice;
+      $tfootTotal.innerHTML = commasNumber($sumPrice);
       $tfootTour.innerHTML = $sumTour;
+    }
+
+    function commasNumber(number){
+      return String(number).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function normalNumber(string){
+      return Number(string.split(",").join(""));
     }
   </script>
 </body>
