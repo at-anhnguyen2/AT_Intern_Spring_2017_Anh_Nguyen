@@ -207,6 +207,7 @@
     </p>
   </div>
 
+  <!-- tout booked table -->
   <div class="tour-booked-info">
     <table class="table">
     <caption>BOOKED TOUR LIST</caption>
@@ -232,6 +233,10 @@
     </table>
     <button type="button" id="btn-back"> < Back </button>
     <button type="button" id="btn-pay">Pay</button>
+  </div>
+
+  <div id="overlay-body">
+    
   </div>
 
   <!-- footer -->
@@ -276,6 +281,12 @@
     var $tourPrice = document.getElementsByClassName('price');
     var $arrayIsBooked = [];
     var $arrayTourBooked = [];
+    var $tableTourBooked = document.getElementsByClassName('tour-booked-info');
+    var $tfootTour = document.getElementById('total-tour');
+    var $tfootTotal = document.getElementById('total-price');
+    var $pay = document.getElementById('btn-pay');
+    var $back = document.getElementById('btn-back');
+    var $overlayBody = document.getElementById('overlay-body');
 
     // load local Storage
     if(typeof(Storage) !== "undefined"){
@@ -327,18 +338,83 @@
     }
 
     // click number of tour
-    var $tableTourBooked = document.getElementsByClassName('tour-booked-info');
     $numberOfTour.addEventListener('click', function() {
-      $tableTourBooked[0].style.visibility = "visible";
-      // var $body = document.getElementById('body');
+      $tableTourBooked[0].style = "visibility: visible; z-index: 20";
+      $overlayBody.style = "background: rgba(0, 0, 0, 0.4); z-index: 10";
+      loadTable();
     });
 
-    var $pay = document.getElementById('btn-pay');
+    //click button pay
     $pay.addEventListener('click', function() {
       alert("Paying Success!!!!");
-      $tableTourBooked[0].style.visibility = "hidden";
+      $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
+      $overlayBody.style = "background: transparent; z-index: -10";
       localStorage.clear();
+      loadLocalStorage();
     });
+
+    //click button back
+    $back.addEventListener('click', function(){
+      $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
+      $overlayBody.style = "background: transparent; z-index: -10";
+      loadLocalStorage();
+    });
+
+    function loadTable(){
+      var $showTour = document.getElementById('show-tour');
+      var $arrayTour = JSON.parse(localStorage.listTour);
+      console.log($arrayTour);
+      for (var i = 0, len = $arrayTour.length; i < len; i++) {
+        //create Elements in table
+        var $tr = document.createElement('tr');
+        var $tdName = document.createElement('td');
+        var $tdPrice = document.createElement('td');
+        $tdPrice.className = "tbody-price";
+        var $tdQuantity = document.createElement('td');
+        var $inputQuantity = document.createElement('input');
+        $inputQuantity.className = "tbody-quantity";
+        $inputQuantity.type = "text";
+        $inputQuantity.value = "1";
+        var $tdTotal = document.createElement('td');
+        $tdTotal.className = "tbody-total";
+
+        //add value
+        $tdName.innerHTML = $arrayTour[i].name;
+        $strPrice = String($arrayTour[i].price);
+        $tdPrice.innerHTML = $strPrice.substring(0, $strPrice.length - 4).split(".").join("");
+        $tdQuantity.appendChild($inputQuantity);
+        $tdTotal.innerHTML = Number($tdPrice.innerHTML) * Number($inputQuantity.value);
+
+        //table appendChild
+        $tr.appendChild($tdName);
+        $tr.appendChild($tdPrice);
+        $tr.appendChild($tdQuantity);
+        $tr.appendChild($tdTotal);
+        $showTour.appendChild($tr);
+        updateTotal();
+
+        //Change Quantity
+        $inputQuantity.addEventListener('change', function(e) {
+          //update subTotal
+          $currentRowPrice = e.path[2].childNodes[1].innerHTML;
+          e.path[2].childNodes[3].innerHTML = Number($currentRowPrice) * Number(e.target.value);
+          //update Total
+          updateTotal();
+        });
+      }
+    }
+    
+    function updateTotal(){
+      var $arrayTotal = document.getElementsByClassName('tbody-total');
+      var $arrayCountTour = document.getElementsByClassName('tbody-quantity');
+      var $sumPrice = 0, $sumTour = 0;
+      for (var i = 0, len = $arrayTotal.length; i < len; i++) {
+        $sumPrice += Number($arrayTotal[i].innerHTML);
+        $sumTour += Number($arrayCountTour[i].value);
+      }
+      $tfootTotal.innerHTML = $sumPrice;
+      $tfootTour.innerHTML = $sumTour;
+    }
   </script>
 </body>
 </html>
