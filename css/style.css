@@ -16,7 +16,8 @@ body {
   padding: 0;
   border: 0;
   font-family: Arial, 'Bryant Bold';
-  font-size: 14px; }
+  font-size: 14px;
+  z-index: 0; }
   body .tour-booked {
     position: fixed;
     width: 150px;
@@ -32,7 +33,8 @@ body {
       font-size: 60px;
       font-weight: bold;
       color: red;
-      margin: 0; }
+      margin: 0;
+      cursor: pointer; }
   body .tour-booked-info {
     position: fixed;
     width: 800px;
@@ -62,13 +64,13 @@ body {
         color: #fff;
         padding-left: 20px; }
       body .tour-booked-info .table .th1 {
-        width: 320px; }
+        width: 400px; }
       body .tour-booked-info .table .th2 {
         width: 160px; }
       body .tour-booked-info .table .th3 {
         width: 80px; }
       body .tour-booked-info .table .th4 {
-        width: 240px; }
+        width: 160px; }
       body .tour-booked-info .table th, body .tour-booked-info .table td {
         padding: 10px;
         border: 1px solid #e5e5e5; }
@@ -80,6 +82,35 @@ body {
         color: red; }
       body .tour-booked-info .table tbody tr:nth-child(even) {
         background-color: #e5e5e5; }
+      body .tour-booked-info .table tbody .tbody-price {
+        text-align: right; }
+      body .tour-booked-info .table tbody .tbody-quantity {
+        width: 80px;
+        text-align: right;
+        font-size: 20px;
+        border: none;
+        background-color: transparent; }
+      body .tour-booked-info .table tbody .tbody-total {
+        text-align: right; }
+    body .tour-booked-info #btn-back {
+      display: block;
+      padding: 10px;
+      width: 100px;
+      float: left; }
+    body .tour-booked-info #btn-pay {
+      display: block;
+      padding: 10px;
+      width: 100px;
+      float: right; }
+  body #overlay-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    content: '';
+    z-index: -10; }
 
 .phone-number {
   color: #ffa800;
@@ -177,7 +208,8 @@ body {
         height: 100%;
         background: rgba(0, 0, 0, 0.4); }
       .content .categories .item-category:hover {
-        transform: scale(1.025, 1.025); }
+        transform: scale(1.025, 1.025);
+        cursor: pointer; }
   .content .container {
     position: relative;
     width: 295px;
@@ -200,9 +232,11 @@ body {
       right: 0;
       bottom: 0;
       color: #fff;
+      border: none;
       background-color: #0ec0ee; }
       .content .container .book-btn:hover {
-        color: red; }
+        background-color: blue;
+        cursor: pointer; }
 
 .footer {
   padding: 6px 0;
