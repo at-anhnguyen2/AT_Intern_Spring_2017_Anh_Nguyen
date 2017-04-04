@@ -1,0 +1,350 @@
+@import "variable";
+@import "global";
+@import "mixin";
+@font-face{
+  font-family: 'Bryant Bold';
+  src: url(../font/bryant-bold-webfont.ttf);
+}
+body{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, 'Bryant Bold';
+  font-size: 14px;
+  z-index: 0;
+  .tour-booked{
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    margin-top: -100px;
+    right: 0;
+    border: 3px solid #000;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #fff;
+    #number-of-tour{
+      font-size: 60px;
+      font-weight: bold;
+      color: red;
+      margin: 0;
+      cursor: pointer;
+    }
+  }
+  .tour-booked-info{
+    position: fixed;
+    width: 800px;
+    height: auto;
+    top: 10%;
+    left: 50%;
+    margin-left: -400px;
+    background-color: $price-color;
+    visibility: hidden;
+    p{
+      font-size: 40px;
+      line-height: 0;
+      font-weight: bold;
+      color: #fff;
+      padding-left: 20px;
+    }
+    .table{
+      background-color: #fff;
+      border-collapse: collapse;
+      border: 1px solid #e5e5e5;
+      font-size: 20px;
+      caption{
+        background-color: $price-color;
+        font-size: 40px;
+        line-height: 80px;
+        font-weight: bold;
+        color: #fff;
+        padding-left: 20px;
+      }
+      .th1{
+        width: 400px;
+      }
+      .th2{
+        width: 160px;
+      }
+      .th3{
+        width: 80px;
+      }
+      .th4{
+        width: 160px;
+      }
+      th, td{
+        padding: 10px;
+        border: 1px solid #e5e5e5;
+      }
+      thead{
+        color: $price-color;
+      }
+      tfoot{
+        text-align: right;
+        font-weight: bold;
+        color: red;
+      }
+      tbody{
+        tr:nth-child(even) {  
+          background-color: #e5e5e5;   
+        }
+        .tbody-price{
+          text-align: right;
+        }
+        .tbody-quantity{
+          width: 80px;
+          text-align: right;
+          font-size: 20px;
+          border: none;
+          background-color: transparent;
+        }
+        .tbody-total{
+          text-align: right;
+        }
+        .btn-delete{
+          background: url(../img/delete-icon.png);
+          width: 24px;
+          height: 24px;
+          border: none;
+          float: right;
+          &:hover{
+            cursor: pointer;
+            box-shadow: 0.7px 0.7px 2px 0 rgba(0,0,0, 0.18); 
+          }
+        }
+      }
+    }
+    #btn-back{
+      display: block;
+      padding: 10px;
+      margin: 10px;
+      width: 100px;
+      float: left;
+    }
+    #btn-pay{
+      display: block;
+      padding: 10px;
+      margin: 10px;
+      width: 100px;
+      float: right;
+    }
+  }
+  #overlay-body{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    content: '';
+    z-index: -10;
+  }
+}
+.phone-number{
+  color: $phone-number-color;
+  font-weight: bold;
+}
+.price{
+  color: $price-color;
+  font-weight: bold;
+}
+.header{
+  @extend %center-layout;
+  height: 110px;
+  overflow: hidden;
+  .header-logo{
+    float: left;
+    position: relative;
+    height: 110px;
+    img{
+      height: 86px;
+      position: absolute;
+      top: 50%;
+      margin-top: -43px;
+    }
+  } 
+  .right-header{
+    float: right;
+    img, div{
+      display: inline-block;
+      vertical-align: middle;
+    }
+    p{
+      padding: 0;
+      margin: 5px;
+    }
+  }  
+  .top-menu{
+    float: right;
+    margin-top: 5px;
+    a{
+      font-weight: bold;
+      color: $normal-color;
+      display: inline-block;
+      padding: 20px 15px;
+      text-decoration: none;
+      border-bottom: 5px solid transparent;
+      &:hover{
+        border-bottom: 5px solid $phone-number-color;
+      }
+    }
+  }
+}
+.banner{
+  //clear: both;
+  @extend %text-upper-case;
+  width: 100%;
+  height: 180px;
+  background: url(../img/banner.png) no-repeat center;
+  font-size: 30px;
+  box-sizing: border-box;
+  position: relative;
+  .banner-text{
+    position: absolute;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -620px;
+    .line2{
+      &::before{
+        content: "TRAI NGHIEM ";
+        color: transparent;
+      }
+    }
+  }
+}
+.content{
+  @extend %center-layout;
+  width: 1260px;
+  padding: 2px;
+  box-sizing: border-box;
+  h1{
+    font-size: 30px;
+    margin: 40px 8px;
+  }
+  .categories{
+    margin-bottom: 50px;
+    .item-category{
+      @extend %text-upper-case;
+      position: relative;
+      font-size: 30px;
+      width: 400px;
+      height: 120px;
+      margin: 0 8px; 
+      border-radius: 3px;
+      box-sizing: border-box;
+      display: inline-block;
+      box-shadow: 0 1px 2px 0 rgba(0,0,0, 0.18);
+      text-align: center;
+      line-height: 120px;
+      @for $i from 1 through 3 {
+        &:nth-child( #{$i} ){
+          background: url(../img/cate#{$i}.png) no-repeat center; 
+        }
+      }
+      &:after{
+        content: attr(category-text);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+      }
+      &:hover{
+        transform: scale(1.025, 1.025);
+        cursor: pointer;
+      }
+    }
+  }
+  .container{
+    position: relative;
+    width: 295px;
+    height: auto;
+    margin: 10px 8px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,0.15);
+    img{
+      width: 100%;
+      height: auto;
+    }
+    div{
+      margin: 0;
+      padding: 0 20px;
+    }
+    .book-btn{
+      position: absolute;
+      width: 50px;
+      height: 25px;
+      right: 0;
+      bottom: 0;
+      color: #fff;
+      border: none;
+      background-color: $price-color;
+      &:hover{
+        background-color: blue;
+        cursor: pointer;
+      }
+    }
+  }
+}
+.footer{
+  @extend %center-layout;
+  padding: 6px 0;
+  margin-top: 22px;
+  border-top: 1px solid gray;
+  box-sizing: border-box;
+  .contact{
+    margin-top: 20px;
+    div{
+      //background-color: green;
+      margin: 0;
+    }
+    .footer-logo{
+      width: 295px;
+      float: left;
+    }
+    .info{
+      width: 285px;
+      float: left;
+      p{
+        margin: 8px 0;
+      }
+    }
+    .community{
+      width: 200px;
+      float: left;
+    }
+    .input-email{
+      width: 440px;
+      float: right;
+      div{
+        width: 440px;
+        height: 50px;
+        input{
+          height: 50px;
+          width: 350px;
+          padding: 25px;
+          //padding-right: 75px;
+          box-sizing: border-box;
+        }
+        button{
+          width: 90px;
+          height: 53px;
+          margin-left: -94px;
+          border: 0;
+          background-color: $price-color;
+        }
+      }
+    }
+  }
+  .license{
+    padding: 10px 0;
+    clear: both;
+  }
+}

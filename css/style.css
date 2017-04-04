@@ -1,0 +1,292 @@
+.header, .content, .footer {
+  width: 1240px;
+  height: auto;
+  margin: 0 auto; }
+
+.banner, .content .categories .item-category {
+  color: #fff;
+  text-transform: uppercase; }
+
+@font-face {
+  font-family: 'Bryant Bold';
+  src: url(../font/bryant-bold-webfont.ttf); }
+body {
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-family: Arial, 'Bryant Bold';
+  font-size: 14px;
+  z-index: 0; }
+  body .tour-booked {
+    position: fixed;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    margin-top: -100px;
+    right: 0;
+    border: 3px solid #000;
+    border-radius: 3px;
+    text-align: center;
+    background-color: #fff; }
+    body .tour-booked #number-of-tour {
+      font-size: 60px;
+      font-weight: bold;
+      color: red;
+      margin: 0;
+      cursor: pointer; }
+  body .tour-booked-info {
+    position: fixed;
+    width: 800px;
+    height: auto;
+    top: 10%;
+    left: 50%;
+    margin-left: -400px;
+    background-color: #0ec0ee;
+    visibility: hidden; }
+    body .tour-booked-info p {
+      font-size: 40px;
+      line-height: 0;
+      font-weight: bold;
+      color: #fff;
+      padding-left: 20px; }
+    body .tour-booked-info .table {
+      background-color: #fff;
+      border-collapse: collapse;
+      border: 1px solid #e5e5e5;
+      font-size: 20px; }
+      body .tour-booked-info .table caption {
+        background-color: #0ec0ee;
+        font-size: 40px;
+        line-height: 80px;
+        font-weight: bold;
+        color: #fff;
+        padding-left: 20px; }
+      body .tour-booked-info .table .th1 {
+        width: 400px; }
+      body .tour-booked-info .table .th2 {
+        width: 160px; }
+      body .tour-booked-info .table .th3 {
+        width: 80px; }
+      body .tour-booked-info .table .th4 {
+        width: 160px; }
+      body .tour-booked-info .table th, body .tour-booked-info .table td {
+        padding: 10px;
+        border: 1px solid #e5e5e5; }
+      body .tour-booked-info .table thead {
+        color: #0ec0ee; }
+      body .tour-booked-info .table tfoot {
+        text-align: right;
+        font-weight: bold;
+        color: red; }
+      body .tour-booked-info .table tbody tr:nth-child(even) {
+        background-color: #e5e5e5; }
+      body .tour-booked-info .table tbody .tbody-price {
+        text-align: right; }
+      body .tour-booked-info .table tbody .tbody-quantity {
+        width: 80px;
+        text-align: right;
+        font-size: 20px;
+        border: none;
+        background-color: transparent; }
+      body .tour-booked-info .table tbody .tbody-total {
+        text-align: right; }
+      body .tour-booked-info .table tbody .btn-delete {
+        background: url(../img/delete-icon.png);
+        width: 24px;
+        height: 24px;
+        border: none;
+        float: right; }
+        body .tour-booked-info .table tbody .btn-delete:hover {
+          cursor: pointer;
+          box-shadow: 0.7px 0.7px 2px 0 rgba(0, 0, 0, 0.18); }
+    body .tour-booked-info #btn-back {
+      display: block;
+      padding: 10px;
+      margin: 10px;
+      width: 100px;
+      float: left; }
+    body .tour-booked-info #btn-pay {
+      display: block;
+      padding: 10px;
+      margin: 10px;
+      width: 100px;
+      float: right; }
+  body #overlay-body {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: transparent;
+    content: '';
+    z-index: -10; }
+
+.phone-number {
+  color: #ffa800;
+  font-weight: bold; }
+
+.price {
+  color: #0ec0ee;
+  font-weight: bold; }
+
+.header {
+  height: 110px;
+  overflow: hidden; }
+  .header .header-logo {
+    float: left;
+    position: relative;
+    height: 110px; }
+    .header .header-logo img {
+      height: 86px;
+      position: absolute;
+      top: 50%;
+      margin-top: -43px; }
+  .header .right-header {
+    float: right; }
+    .header .right-header img, .header .right-header div {
+      display: inline-block;
+      vertical-align: middle; }
+    .header .right-header p {
+      padding: 0;
+      margin: 5px; }
+  .header .top-menu {
+    float: right;
+    margin-top: 5px; }
+    .header .top-menu a {
+      font-weight: bold;
+      color: #000;
+      display: inline-block;
+      padding: 20px 15px;
+      text-decoration: none;
+      border-bottom: 5px solid transparent; }
+      .header .top-menu a:hover {
+        border-bottom: 5px solid #ffa800; }
+
+.banner {
+  width: 100%;
+  height: 180px;
+  background: url(../img/banner.png) no-repeat center;
+  font-size: 30px;
+  box-sizing: border-box;
+  position: relative; }
+  .banner .banner-text {
+    position: absolute;
+    line-height: 20px;
+    top: 50%;
+    margin-top: -60px;
+    left: 50%;
+    margin-left: -620px; }
+    .banner .banner-text .line2::before {
+      content: "TRAI NGHIEM ";
+      color: transparent; }
+
+.content {
+  width: 1260px;
+  padding: 2px;
+  box-sizing: border-box; }
+  .content h1 {
+    font-size: 30px;
+    margin: 40px 8px; }
+  .content .categories {
+    margin-bottom: 50px; }
+    .content .categories .item-category {
+      position: relative;
+      font-size: 30px;
+      width: 400px;
+      height: 120px;
+      margin: 0 8px;
+      border-radius: 3px;
+      box-sizing: border-box;
+      display: inline-block;
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.18);
+      text-align: center;
+      line-height: 120px; }
+      .content .categories .item-category:nth-child(1) {
+        background: url(../img/cate1.png) no-repeat center; }
+      .content .categories .item-category:nth-child(2) {
+        background: url(../img/cate2.png) no-repeat center; }
+      .content .categories .item-category:nth-child(3) {
+        background: url(../img/cate3.png) no-repeat center; }
+      .content .categories .item-category:after {
+        content: attr(category-text);
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); }
+      .content .categories .item-category:hover {
+        transform: scale(1.025, 1.025);
+        cursor: pointer; }
+  .content .container {
+    position: relative;
+    width: 295px;
+    height: auto;
+    margin: 10px 8px;
+    border-radius: 3px;
+    box-sizing: border-box;
+    display: inline-block;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15); }
+    .content .container img {
+      width: 100%;
+      height: auto; }
+    .content .container div {
+      margin: 0;
+      padding: 0 20px; }
+    .content .container .book-btn {
+      position: absolute;
+      width: 50px;
+      height: 25px;
+      right: 0;
+      bottom: 0;
+      color: #fff;
+      border: none;
+      background-color: #0ec0ee; }
+      .content .container .book-btn:hover {
+        background-color: blue;
+        cursor: pointer; }
+
+.footer {
+  padding: 6px 0;
+  margin-top: 22px;
+  border-top: 1px solid gray;
+  box-sizing: border-box; }
+  .footer .contact {
+    margin-top: 20px; }
+    .footer .contact div {
+      margin: 0; }
+    .footer .contact .footer-logo {
+      width: 295px;
+      float: left; }
+    .footer .contact .info {
+      width: 285px;
+      float: left; }
+      .footer .contact .info p {
+        margin: 8px 0; }
+    .footer .contact .community {
+      width: 200px;
+      float: left; }
+    .footer .contact .input-email {
+      width: 440px;
+      float: right; }
+      .footer .contact .input-email div {
+        width: 440px;
+        height: 50px; }
+        .footer .contact .input-email div input {
+          height: 50px;
+          width: 350px;
+          padding: 25px;
+          box-sizing: border-box; }
+        .footer .contact .input-email div button {
+          width: 90px;
+          height: 53px;
+          margin-left: -94px;
+          border: 0;
+          background-color: #0ec0ee; }
+  .footer .license {
+    padding: 10px 0;
+    clear: both; }
+
+/*# sourceMappingURL=style.css.map */
