@@ -231,7 +231,6 @@
         
       </tbody>
     </table>
-    <button type="button" id="btn-back"> < Back </button>
     <button type="button" id="btn-pay">Pay</button>
   </div>
 
@@ -279,18 +278,15 @@
     var $numberOfTour = document.getElementById('number-of-tour');
     var $tourName = document.getElementsByClassName('tour-name');
     var $tourPrice = document.getElementsByClassName('price');
-    var $arrayIsBooked = [];
     var $arrayTourBooked = [];
     var $tableTourBooked = document.getElementsByClassName('tour-booked-info');
     var $tfootTour = document.getElementById('total-tour');
     var $tfootTotal = document.getElementById('total-price');
     var $pay = document.getElementById('btn-pay');
-    var $back = document.getElementById('btn-back');
     var $overlayBody = document.getElementById('overlay-body');
 
     // load local Storage
     if(typeof(Storage) !== "undefined"){
-      checkLocalStorage();
       loadLocalStorage();
     }
     else{
@@ -302,14 +298,20 @@
       $btn[i].addEventListener('click', function(e) {
         j = String(e.target.id).substring(3);
         j = Number(j) - 1;
-        if($arrayIsBooked[j] == false){
-          localStorage.countTour = Number(localStorage.countTour) + 1;
-          $arrayIsBooked[j] = true;
-          $tourHash = {name: $tourName[j].innerHTML, price: $tourPrice[j].innerHTML};
+        $findTour = $arrayTourBooked.findIndex(function(f){
+          return f.name == $tourName[j].innerHTML;
+        });
+        if ($findTour < 0) {
+          $tourHash = {name: $tourName[j].innerHTML, price: $tourPrice[j].innerHTML, quantity: 1};
           $arrayTourBooked.push($tourHash);
+        }else{
+          $arrayTourBooked.forEach(function(tour){
+            if (tour.name == $tourName[j].innerHTML){
+              tour.quantity = Number(tour.quantity) + 1;
+            }
+          });
         }
-        $numberOfTour.innerHTML = localStorage.countTour;
-        localStorage.isTourBooked = JSON.stringify($arrayIsBooked);
+        $numberOfTour.innerHTML = $arrayTourBooked.length;
         localStorage.listTour = JSON.stringify($arrayTourBooked);
       });
     }
@@ -327,40 +329,25 @@
       $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
       $overlayBody.style = "background: transparent; z-index: -10";
       localStorage.clear();
-      $arrayIsBooked = [];
       $arrayTourBooked = [];
       removeTable();
-      checkLocalStorage();
       loadLocalStorage();
     });
 
-    //click button back
-    $back.addEventListener('click', function(){
+    //click overlayBody to back Home page
+    $overlayBody.addEventListener('click', function(){
       $tableTourBooked[0].style = "visibility: hidden; z-index: -20";
       $overlayBody.style = "background: transparent; z-index: -10";
       removeTable();
       loadLocalStorage();
     });
 
-    function checkLocalStorage(){
-      if(!localStorage.countTour){
-        localStorage.countTour = 0; 
-      }
-      if (!localStorage.isTourBooked) {
-        for (var i = 0, len = $btn.length; i < len; i++) {
-          $arrayIsBooked.push(false);
-        }
-        localStorage.isTourBooked = JSON.stringify($arrayIsBooked);
-      }
+    function loadLocalStorage(){
       if (!localStorage.listTour) {
         localStorage.listTour = JSON.stringify($arrayTourBooked);
       }
-    }
-
-    function loadLocalStorage(){
-      $numberOfTour.innerHTML = localStorage.countTour;
-      $arrayIsBooked = JSON.parse(localStorage.isTourBooked);
       $arrayTourBooked = JSON.parse(localStorage.listTour);
+      $numberOfTour.innerHTML = $arrayTourBooked.length;
     }
 
     function loadTable(){
@@ -370,18 +357,21 @@
         //create Elements in table
         var $tr = document.createElement('tr');
         var $tdName = document.createElement('td');
+        var $btnDelete = document.createElement('button');
+        $btnDelete.className = "btn-delete";
         var $tdPrice = document.createElement('td');
         $tdPrice.className = "tbody-price";
         var $tdQuantity = document.createElement('td');
         var $inputQuantity = document.createElement('input');
         $inputQuantity.className = "tbody-quantity";
         $inputQuantity.type = "text";
-        $inputQuantity.value = "1";
+        $inputQuantity.value = $arrayTour[i].quantity;
         var $tdTotal = document.createElement('td');
         $tdTotal.className = "tbody-total";
 
         //add value
         $tdName.innerHTML = $arrayTour[i].name;
+        $tdName.appendChild($btnDelete);
         $strPrice = String($arrayTour[i].price);
         $tdPrice.innerHTML = $strPrice.substring(0, $strPrice.length - 4).split(".").join(",");
         $tdQuantity.appendChild($inputQuantity);
@@ -397,12 +387,31 @@
 
         //Change Quantity
         $inputQuantity.addEventListener('change', function(e) {
+          // update quantity in localStorage
+          $findTour = $arrayTourBooked.findIndex(function(f){
+            return f.name == e.path[2].childNodes[0].childNodes[0].data;
+          });
+          $arrayTourBooked[$findTour].quantity = e.target.value;
+          localStorage.listTour = JSON.stringify($arrayTourBooked);
+
           //update subTotal
           $currentRowPrice = e.path[2].childNodes[1].innerHTML;
           $currentRowTotal = normalNumber($currentRowPrice) * Number(e.target.value);
           e.path[2].childNodes[3].innerHTML = commasNumber($currentRowTotal);
           //update Total
           updateTotal();
+        });
+
+        //delete tour
+        $btnDelete.addEventListener('click', function(e) {
+          $findTour = $arrayTourBooked.findIndex(function(f){
+            return f.name == e.path[1].childNodes[0].data;
+          });
+          $arrayTourBooked.splice($findTour, 1);
+          localStorage.listTour = JSON.stringify($arrayTourBooked);
+          loadLocalStorage();
+          removeTable();
+          loadTable();
         });
       }
       updateTotal();

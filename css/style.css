@@ -54,8 +54,7 @@ body {
       background-color: #fff;
       border-collapse: collapse;
       border: 1px solid #e5e5e5;
-      font-size: 20px;
-      line-height: 40px; }
+      font-size: 20px; }
       body .tour-booked-info .table caption {
         background-color: #0ec0ee;
         font-size: 40px;
@@ -92,14 +91,25 @@ body {
         background-color: transparent; }
       body .tour-booked-info .table tbody .tbody-total {
         text-align: right; }
+      body .tour-booked-info .table tbody .btn-delete {
+        background: url(../img/delete-icon.png);
+        width: 24px;
+        height: 24px;
+        border: none;
+        float: right; }
+        body .tour-booked-info .table tbody .btn-delete:hover {
+          cursor: pointer;
+          box-shadow: 0.7px 0.7px 2px 0 rgba(0, 0, 0, 0.18); }
     body .tour-booked-info #btn-back {
       display: block;
       padding: 10px;
+      margin: 10px;
       width: 100px;
       float: left; }
     body .tour-booked-info #btn-pay {
       display: block;
       padding: 10px;
+      margin: 10px;
       width: 100px;
       float: right; }
   body #overlay-body {

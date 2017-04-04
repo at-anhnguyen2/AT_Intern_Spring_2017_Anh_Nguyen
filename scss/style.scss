@@ -53,7 +53,6 @@ body{
       border-collapse: collapse;
       border: 1px solid #e5e5e5;
       font-size: 20px;
-      line-height: 40px;
       caption{
         background-color: $price-color;
         font-size: 40px;
@@ -103,17 +102,30 @@ body{
         .tbody-total{
           text-align: right;
         }
+        .btn-delete{
+          background: url(../img/delete-icon.png);
+          width: 24px;
+          height: 24px;
+          border: none;
+          float: right;
+          &:hover{
+            cursor: pointer;
+            box-shadow: 0.7px 0.7px 2px 0 rgba(0,0,0, 0.18); 
+          }
+        }
       }
     }
     #btn-back{
       display: block;
       padding: 10px;
+      margin: 10px;
       width: 100px;
       float: left;
     }
     #btn-pay{
       display: block;
       padding: 10px;
+      margin: 10px;
       width: 100px;
       float: right;
     }
