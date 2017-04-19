@@ -1,0 +1,19 @@
+{
+  "members": [
+    {
+      "name": "Huy",
+      "fullName": "Huy Dinh Q.",
+      "position": "Team Manager"
+    },
+    {
+      "name": "Vi",
+      "fullName": "Vi Nguyen H. T.",
+      "position": "Mentor"
+    },
+    {
+      "name": "Anh",
+      "fullName": "Anh Nguyen T.",
+      "position": "Intern"
+    }
+  ]
+}
