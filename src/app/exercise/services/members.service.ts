@@ -20,8 +20,8 @@ export class MembersService {
   getMember(str: string) : Observable<any> {
     return this._http.get('./data/members.json')
     .map((res: any) => {
-      return res.json().members.filter((item:any) => 
-        item.name == "Huy"
+      return res.json().members.filter((item: any) => 
+        item.name === str
       )[0]
     })
   }

@@ -1,19 +1,102 @@
 {
   "members": [
     {
-      "name": "Huy",
-      "fullName": "Huy Dinh Q.",
-      "position": "Team Manager"
+      "name": "Hoang",
+      "avatar": "https://avatars3.githubusercontent.com/u/26244995?v=3&s=400",
+      "fullName": "Hoang Nguyen L.",
+      "team": "FE",
+      "joinedDay": "03/06/2017"
     },
     {
-      "name": "Vi",
-      "fullName": "Vi Nguyen H. T.",
-      "position": "Mentor"
+      "name": "Trang",
+      "avatar": "https://avatars3.githubusercontent.com/u/26273712?v=3&s=400",
+      "fullName": "Trang Nguyen T.",
+      "team": "FE",
+      "joinedDay": "03/06/2017"
     },
     {
       "name": "Anh",
+      "avatar": "https://avatars3.githubusercontent.com/u/26266654?v=3&s=400",
       "fullName": "Anh Nguyen T.",
-      "position": "Intern"
+      "team": "FE",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Nam",
+      "avatar": "https://avatars3.githubusercontent.com/u/25734178?v=3&s=400",
+      "fullName": "Nam Le H.",
+      "team": "FE",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Duong",
+      "avatar": "https://avatars1.githubusercontent.com/u/26245462?v=3&s=400",
+      "fullName": "Duong Le C.",
+      "team": "Ruby",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Duy",
+      "avatar": "https://avatars1.githubusercontent.com/u/26267352?v=3&s=400",
+      "fullName": "Duy Nguyen P.",
+      "team": "Ruby",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Huy",
+      "avatar": "https://avatars1.githubusercontent.com/u/26244518?v=3&s=400",
+      "fullName": "Huy Nguyen V.",
+      "team": "Ruby",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Minh",
+      "avatar": "https://avatars1.githubusercontent.com/u/27756008?v=3&s=400",
+      "fullName": "Minh Tang Q.",
+      "team": "Ruby",
+      "joinedDay": "01/06/2017"
+    },
+    {
+      "name": "Thap",
+      "avatar": "https://avatars3.githubusercontent.com/u/26251889?v=3&s=400",
+      "fullName": "Thap Nguyen T.",
+      "team": "Ruby",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Tho",
+      "avatar": "https://avatars0.githubusercontent.com/u/23026380?v=3&s=400",
+      "fullName": "Tho Le V.",
+      "team": "Ruby",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Trang2",
+      "avatar": "https://avatars2.githubusercontent.com/u/24474419?v=3&s=400",
+      "fullName": "Trang Truong C.",
+      "team": "Ruby",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Nhan",
+      "avatar": "https://avatars3.githubusercontent.com/u/26216647?v=3&s=400",
+      "fullName": "Nhan Dang D.",
+      "team": "PHP",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Dieu",
+      "avatar": "https://avatars0.githubusercontent.com/u/26242351?v=3&s=400",
+      "fullName": "Dieu Le X.",
+      "team": "PHP",
+      "joinedDay": "03/06/2017"
+    },
+    {
+      "name": "Tinh",
+      "avatar": "https://avatars3.githubusercontent.com/u/26567998?v=3&s=400",
+      "fullName": "Tinh Dang T.",
+      "team": "PHP",
+      "joinedDay": "03/06/2017"
     }
   ]
 }
