@@ -7,16 +7,18 @@ import { MembersService } from '../services/members.service';
 })
 
 export class MembersAppComponent  { 
-  teamName: string;
+  // teamName: string;
   inputTeamName: string;
   arrayMembers: any;
   memberSelected: any;
+  isLoading: boolean;
 
   constructor(private _membersService: MembersService) {
-    this.teamName = '';
+    // this.teamName = '';
     this.inputTeamName = '';
     this.arrayMembers = [];
     this.memberSelected = null;
+    this.isLoading = false;
     this._membersService.getAllMembers()
     .subscribe((data: any) => {
       this.arrayMembers = data.members;
@@ -27,7 +29,15 @@ export class MembersAppComponent  {
     this.memberSelected = name;
   }
 
-  searchTeam(){
-    this.teamName = this.inputTeamName;
+  addNewMember(objNewMember: any){
+    this.isLoading = true;
+    this.arrayMembers.push(objNewMember);
+    setTimeout(() => {
+      this.isLoading = false;
+    });
   }
+
+  // searchTeam(){
+  //   this.inputTeamName = 'FE';
+  // }
 }

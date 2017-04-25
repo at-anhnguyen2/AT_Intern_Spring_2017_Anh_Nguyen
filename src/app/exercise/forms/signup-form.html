@@ -1,0 +1,45 @@
+<div class="my-signup">
+  <h2>Sign Up</h2>
+  <form #signupForm="ngForm" (ngSubmit)="registerUser(signupForm)">
+
+    <!-- name -->
+    <span *ngIf="name.errors && (name.dirty || name.touched)"
+    class="alert-danger">
+      <div [hidden]="!name.errors.required">
+        Name is required
+      </div>
+      <!-- <div [hidden]="!name.errors.minlength">
+        Name must be at least 4 characters long.
+      </div>
+      <div [hidden]="!name.errors.maxlength">
+        Name cannot be more than 24 characters long.
+      </div> -->
+    </span>
+    <input type="text" class="form-control" name="name" placeholder="Name..." ngModel required #name="ngModel" [ngClass]="{'input-error':name.errors && name.touched, 'input-success':name.valid}">
+
+    <!-- full name -->
+    <input type="text" class="form-control" name="fullName" placeholder="Full Name..." ngModel>
+
+    <!-- avatar -->
+    <input type="text" class="form-control" name="avatar" placeholder="Avatar Url..." ngModel>
+
+    <!-- team -->
+    <span *ngIf="team.errors && (team.dirty || team.touched)"
+    class="alert-danger">
+      <div [hidden]="!team.errors.required">
+        Team is required
+      </div>
+      <!-- <div [hidden]="!team.errors.minlength">
+        Team must be at least 4 characters long.
+      </div>
+      <div [hidden]="!team.errors.maxlength">
+        Team cannot be more than 24 characters long.
+      </div> -->
+    </span>
+    <input type="text" class="form-control" name="name" name="team" placeholder="Team..." ngModel required #team="ngModel" [ngClass]="{'input-error':team.errors && team.touched, 'input-success':team.valid}">
+
+    <!-- joined day -->
+    <input type="date" class="form-control" name="joinedDay" ngModel>
+    <button type="sunmit" class="btn btn-default">Sign Up</button>
+  </form>
+</div>

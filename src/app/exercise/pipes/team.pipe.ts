@@ -6,8 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 export class TeamPipe implements PipeTransform{
   transform(inputArray: any, params: string){
-    return inputArray.filter((res: any) => 
-      res.team === params
-    )
+    if(params !== ''){
+      return inputArray.filter((res: any) => 
+        res.team === params
+      )
+    } else {
+      return inputArray;
+    }
   }
 }

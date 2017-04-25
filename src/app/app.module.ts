@@ -8,10 +8,11 @@ import { MembersAppComponent }  from './exercise/members/members.component';
 import { DetailComponent } from './exercise/member_detail/detail.component';
 import { AvatarPipe } from './exercise/pipes/avatar.pipe';
 import { TeamPipe } from './exercise/pipes/team.pipe';
+import { SignupForm } from './exercise/forms/signup-form.component';
 
 @NgModule({
   imports:      [ BrowserModule, HttpModule, FormsModule ],
-  declarations: [ MembersAppComponent, DetailComponent, AvatarPipe, TeamPipe ],
+  declarations: [ MembersAppComponent, DetailComponent, AvatarPipe, TeamPipe, SignupForm ],
   bootstrap:    [ MembersAppComponent ],
   providers:    [ MembersService ]
 })
