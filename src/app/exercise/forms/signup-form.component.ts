@@ -16,13 +16,7 @@ export class SignupForm {
       form.reset();
     } else {
       alert("Error: Form is unvalid");
+      console.log(form);
     }
   }
-
-  // input[type="text"]:valid {
-  // border: 2px solid green;
-  // } 
-  // input[type="text"]:invalid {
-  // border: 2px solid red;
-  // }
 }
