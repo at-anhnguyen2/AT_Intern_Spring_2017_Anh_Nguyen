@@ -45,9 +45,9 @@ h1 {
   border: 1px solid #d9534f;
   box-shadow: 0px 0px 8px 0 #d9534f;/*rgba(217, 83, 79, 1);*/
 }
-input.ng-invalid{
-  border: 1px solid #d9534f !important;
-  box-shadow: 0px 0px 8px 0 #d9534f !important;
+input.ng-touched.ng-invalid{
+  border: 1px solid #d9534f;
+  box-shadow: 0px 0px 8px 0 #d9534f;
 }
 .input-success{
   border: 1px solid #5cb85c;

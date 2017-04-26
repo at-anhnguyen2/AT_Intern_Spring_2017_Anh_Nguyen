@@ -18,7 +18,7 @@ export class MemberForm {
   github: FormControl;
 
   constructor(_formBuilder: FormBuilder){
-    this.firstName = new FormControl("Anh", Validators.required);
+    this.firstName = new FormControl("", Validators.required);
     this.lastName = new FormControl("Nguyen", Validators.required);
     this.team = new FormControl("FE", Validators.required);
     this.email = new FormControl("", Validators.required);
