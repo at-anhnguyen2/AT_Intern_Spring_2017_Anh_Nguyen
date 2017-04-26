@@ -1,0 +1,36 @@
+<div class="jumbotron my-header">
+  <div class="container my-header-contain">
+    <img src="http://www.asiantech.vn/assets/images/thumbs/logo_header.png" alt="asiantech logo">
+  </div>
+</div>
+<div class="my-banner">
+  <img src="http://www.asiantech.vn/assets/images/index/manifest_main.png" alt="footer img">
+  <img src="http://www.asiantech.vn/assets/images/index/triangle.png" alt="slogan" class="my-slogan">
+</div>
+<div class="my-body">
+  <div class="col-sm-3 sidenav">
+    <h2 class="">{{inputTeamName}} Interns</h2>
+    <div class="input-group">
+      <input type="text" [(ngModel)]="inputTeamName" class="form-control" placeholder="Search By Team..">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">
+          <span class="glyphicon glyphicon-search"></span>
+        </button>
+      </span>
+    </div>
+    <ul *ngIf="!isLoading" class="nav nav-pills nav-stacked">
+      <li *ngFor= "let item of arrayMembers | teampipe:inputTeamName">
+        <a href="javascript:void" (click)="show(item.name)">
+          <img src="{{item.avatar | avatarpipe }}" alt="avatar" class="img-circle" style="width:30px; height: 30px;">
+          {{item.name}}
+        </a>
+      </li>      
+    </ul><br>
+    <!-- <signup-form (result)="addNewMember($event)"></signup-form> -->
+  </div>
+  <detail [value]="memberSelected"></detail>
+  <member-form></member-form>
+</div>
+<div class="my-footer">
+  <img src="http://kingofwallpapers.com/coding-wallpaper/coding-wallpaper-002.jpg" alt="footer img">
+</div>

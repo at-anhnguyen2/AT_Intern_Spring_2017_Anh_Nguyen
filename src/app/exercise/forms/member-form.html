@@ -1,0 +1,42 @@
+<div class="col-sm-3 my-signup">
+  <h2 class="">Register</h2>
+  <form [formGroup]="newMemberForm">
+    <fieldset [formGroup]="info">
+      <!-- name -->
+      <div class="my-input">
+        First Name
+        <input type="text" class="form-control" name="firstName" placeholder="Name..." formControlName="firstName">
+        <span [hidden]="!(firstName.invalid && firstName.touched)">First Name is required</span>
+      </div>
+      <div class="my-input">
+        Last Name
+        <input type="text" class="form-control" name="lastName" placeholder="Name..." formControlName="lastName">
+        <span [hidden]="!(lastName.invalid && lastName.touched)">Last Name is required</span>
+      </div>
+
+      <!-- team -->
+      <div class="my-input">
+        Team
+        <input type="text" class="form-control" name="team" placeholder="Name..." formControlName="team">
+        <span [hidden]="!(team.invalid && team.touched)">Team is required</span>
+      </div>
+    </fieldset>
+
+    <fieldset formGroupName="account">
+      <!-- account -->
+      <div class="my-input">
+        Email
+        <input type="text" class="form-control" name="email" placeholder="Name..." formControlName="email">
+        <span [hidden]="!(email.invalid && email.touched)">Email is required</span>
+      </div>
+
+      <!-- github -->
+      <div class="my-input">
+        Github
+        <input type="text" class="form-control" name="github" placeholder="Name..." formControlName="github">
+        <span [hidden]="!(github.invalid && github.touched)">Github is required</span>
+      </div>
+    </fieldset>
+    <button type="sunmit" class="btn btn-default" [disabled]="!newMemberForm.valid">Sign Up</button>
+  </form>
+</div>

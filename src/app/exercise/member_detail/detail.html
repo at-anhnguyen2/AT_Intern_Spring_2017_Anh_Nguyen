@@ -1,0 +1,27 @@
+<div class="col-sm-6">
+  <div *ngIf="memberSelected" class="my-detail">
+    <div class="col-md-4 my-avatar">
+      <img src="{{memberSelected.avatar | avatarpipe}}" alt="avatar" style="width:100%">
+    </div>
+    <div class="col-md-8 my-profile">
+      <div class="name-title">
+        <h3>{{memberSelected.fullName}}</h3>
+      </div>
+      <div class="team-title">
+        <h3>Team: {{memberSelected.team | uppercase}}</h3>
+      </div>
+      <div class="name-title">
+        <h4><span class="glyphicon glyphicon-time"></span> Joined Day: {{memberSelected.joinedDay | date:'EEE, MMM d, y' }}</h4>
+      </div>
+      <div class="navbar navbar-inverse my-nav">
+        <ul class="nav navbar-nav">
+          <li><a href="#">Phone</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Skype</a></li>
+          <li><a href="#">Google+</a></li>
+          <li><a href="#">Twitter</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
